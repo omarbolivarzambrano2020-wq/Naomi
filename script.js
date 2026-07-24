@@ -223,6 +223,7 @@ setInterval(()=>{
 const sorpresa = document.getElementById("ultimaSorpresa");
 const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
+document.body.innerHTML += "<h1 style='position:fixed;top:10px;left:10px;background:red;color:white;z-index:999999'>PRUEBA</h1>";
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
 alert(fraseFinal);
