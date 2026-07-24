@@ -201,7 +201,7 @@ function estrellaFugaz(){
 
 }
 
-setInterval(estrellaFugaz,7000);
+setInterval(estrellaFugaz,2500);
 setInterval(()=>{
 
     const luz=document.createElement("div");
