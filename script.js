@@ -210,3 +210,27 @@ if (play) {
     };
 
 }
+// ======================
+// ESTRELLAS FUGACES
+// ======================
+
+function estrellaFugaz(){
+
+    const s=document.createElement("div");
+
+    s.className="shooting-star";
+
+    s.style.top=Math.random()*40+"vh";
+    s.style.left=(80+Math.random()*20)+"vw";
+
+    document.body.appendChild(s);
+
+    setTimeout(()=>{
+
+        s.remove();
+
+    },2000);
+
+}
+
+setInterval(estrellaFugaz,7000);
