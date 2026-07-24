@@ -139,6 +139,25 @@ rgba(255,255,255,.15)
 
 }
 
+.oculta {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 /* Fondo */
 
 #stars{
