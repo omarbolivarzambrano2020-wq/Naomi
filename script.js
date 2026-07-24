@@ -2,8 +2,12 @@
 // ELEMENTOS
 // =======================
 
-const boton = document.getElementById("btnCarta");
+const boton = document.getElementById("abrirCarta");
 const carta = document.getElementById("carta");
+
+boton.addEventListener("click", () => {
+    carta.classList.add("mostrar");
+});
 
 const intro = document.getElementById("intro");
 const pagina = document.querySelector(".container");
