@@ -220,9 +220,11 @@ setInterval(()=>{
     },5000);
 
 },700);
+const sorpresa = document.getElementById("ultimaSorpresa");
+const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
 const teAmoFinal = document.getElementById("teAmoFinal");
-
+const finalPequeno = document.getElementById("finalPequeno");
 sorpresa.onclick = ()=>{
 
     pantalla.classList.add("pantallaVisible");
@@ -239,8 +241,38 @@ sorpresa.onclick = ()=>{
         if(volumen<=0.25){
 
             clearInterval(bajar);
+setTimeout(()=>{
 
+    // Desaparece la carta
+    carta.classList.add("desvanecer");
+
+    // Desaparece el botón de música
+    play.classList.add("desvanecer");
+
+    // Desaparece el botón de sorpresa
+    sorpresa.classList.add("desvanecer");
+
+    // Desaparece el contador
+    document.getElementById("contador").classList.add("desvanecer");
+
+    // Desaparece la frase principal
+    document.querySelector(".frase").classList.add("desvanecer");
+
+    // Desaparecen los títulos
+    document.querySelector("h3").classList.add("desvanecer");
+    document.querySelector(".container h1").classList.add("desvanecer");
+
+},9000);
         }
+
+setTimeout(()=>{
+
+    finalPequeno.innerHTML =
+    "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
+
+    finalPequeno.classList.add("mostrarTexto");
+
+},10000);
 
     },100);
 
@@ -327,35 +359,5 @@ sorpresa.onclick = ()=>{
     },6500);
 
 };
-setTimeout(()=>{
 
-    // Desaparece la carta
-    carta.classList.add("desvanecer");
 
-    // Desaparece el botón de música
-    play.classList.add("desvanecer");
-
-    // Desaparece el botón de sorpresa
-    sorpresa.classList.add("desvanecer");
-
-    // Desaparece el contador
-    document.getElementById("contador").classList.add("desvanecer");
-
-    // Desaparece la frase principal
-    document.querySelector(".frase").classList.add("desvanecer");
-
-    // Desaparecen los títulos
-    document.querySelector("h3").classList.add("desvanecer");
-    document.querySelector(".container h1").classList.add("desvanecer");
-
-},9000);
-const finalPequeno = document.getElementById("finalPequeno");
-
-setTimeout(()=>{
-
-    finalPequeno.innerHTML =
-    "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
-
-    finalPequeno.classList.add("mostrarTexto");
-
-},10000);
