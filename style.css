@@ -364,3 +364,80 @@ opacity:1 !important;
 transform:scale(1) !important;
 
 }
+/* ==========================
+   NEBULOSAS
+========================== */
+
+#nebula1,
+#nebula2,
+#nebula3{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.18;
+
+    z-index:-3;
+
+    animation:moverNebula 18s ease-in-out infinite alternate;
+
+}
+
+#nebula1{
+
+    width:450px;
+    height:450px;
+
+    background:#ff7ab8;
+
+    top:10%;
+    left:-120px;
+
+}
+
+#nebula2{
+
+    width:500px;
+    height:500px;
+
+    background:#8d6cff;
+
+    right:-150px;
+    bottom:0;
+
+    animation-duration:22s;
+
+}
+
+#nebula3{
+
+    width:350px;
+    height:350px;
+
+    background:#4dc8ff;
+
+    top:55%;
+    left:30%;
+
+    opacity:.12;
+
+}
+
+@keyframes moverNebula{
+
+from{
+
+transform:translate(0,0) scale(1);
+
+}
+
+to{
+
+transform:translate(40px,-30px) scale(1.1);
+
+}
+
+}
