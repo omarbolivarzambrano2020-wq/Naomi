@@ -250,9 +250,17 @@ sorpresa.onclick = ()=>{
     // Después de 2 segundos desaparece la página principal
     setTimeout(()=>{
 
-        pagina.classList.add("desvanecer");
+     setTimeout(()=>{
 
-    },2000);
+    pagina.style.opacity="0";
+
+},2000);
+
+setTimeout(()=>{
+
+    pagina.style.display="none";
+
+},5000);
 
     // Lluvia de pétalos
     for(let i=0;i<300;i++){
