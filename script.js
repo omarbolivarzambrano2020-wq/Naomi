@@ -316,7 +316,7 @@ setTimeout(() => {
     // Máquina de escribir
     const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
 
-    fraseFinal.innerHTML = "";
+    fraseFinal.innerHTML = "HOLA NAOMI";
 
     let i = 0;
 
