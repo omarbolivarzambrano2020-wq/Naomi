@@ -259,12 +259,9 @@ transform:scale(1.05);
 
 transform:scale(1);
 
-} } x    
+}     
 #moon{
 animation:lunaRespira 6s ease-in-out infinite;
-    
-
-}
     position:fixed;
     top:60px;
     right:80px;
