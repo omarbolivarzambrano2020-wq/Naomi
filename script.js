@@ -225,7 +225,7 @@ const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
-
+alert(fraseFinal);
 sorpresa.onclick = ()=>{
 alert("1");
     pantalla.classList.add("pantallaVisible");
