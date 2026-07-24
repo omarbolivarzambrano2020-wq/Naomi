@@ -225,6 +225,7 @@ const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
+
 sorpresa.onclick = ()=>{
 
     pantalla.classList.add("pantallaVisible");
@@ -234,47 +235,24 @@ sorpresa.onclick = ()=>{
 
     const bajar = setInterval(()=>{
 
-        volumen-=0.02;
+        volumen -= 0.02;
 
-        musica.volume=Math.max(volumen,0.25);
+        musica.volume = Math.max(volumen,0.25);
 
-        if(volumen<=0.25){
+        if(volumen <= 0.25){
 
             clearInterval(bajar);
-setTimeout(()=>{
 
-    // Desaparece la carta
-    carta.classList.add("desvanecer");
-
-    // Desaparece el botón de música
-    play.classList.add("desvanecer");
-
-    // Desaparece el botón de sorpresa
-    sorpresa.classList.add("desvanecer");
-
-    // Desaparece el contador
-    document.getElementById("contador").classList.add("desvanecer");
-
-    // Desaparece la frase principal
-    document.querySelector(".frase").classList.add("desvanecer");
-
-    // Desaparecen los títulos
-    document.querySelector("h3").classList.add("desvanecer");
-    document.querySelector(".container h1").classList.add("desvanecer");
-
-},9000);
         }
 
-setTimeout(()=>{
-
-    finalPequeno.innerHTML =
-    "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
-
-    finalPequeno.classList.add("mostrarTexto");
-
-},10000);
-
     },100);
+
+    // Después de 2 segundos desaparece la página principal
+    setTimeout(()=>{
+
+        pagina.classList.add("desvanecer");
+
+    },2000);
 
     // Lluvia de pétalos
     for(let i=0;i<300;i++){
@@ -329,15 +307,17 @@ setTimeout(()=>{
     }
 
     // Máquina de escribir
-    const texto="Porque entre millones de personas... siempre volvería a elegirte.";
+    const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
 
-    let i=0;
+    fraseFinal.innerHTML = "";
+
+    let i = 0;
 
     function escribir(){
 
-        if(i<texto.length){
+        if(i < texto.length){
 
-            fraseFinal.innerHTML+=texto.charAt(i);
+            fraseFinal.innerHTML += texto.charAt(i);
 
             i++;
 
@@ -349,15 +329,23 @@ setTimeout(()=>{
 
     setTimeout(escribir,1800);
 
-    // Aparece TE AMO
+    // Aparece "Te amo"
     setTimeout(()=>{
 
-        teAmoFinal.innerHTML="Te amo, Naomi. ❤️";
+        teAmoFinal.innerHTML = "Te amo, Naomi. ❤️";
 
         teAmoFinal.classList.add("mostrarTeAmo");
 
     },6500);
 
+    // Texto final
+    setTimeout(()=>{
+
+        finalPequeno.innerHTML =
+        "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
+
+        finalPequeno.classList.add("mostrarTexto");
+
+    },10000);
+
 };
-
-
