@@ -1,0 +1,212 @@
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:linear-gradient(#02050f,#08111f,#14213d);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Pantalla inicial */
+
+#intro{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:linear-gradient(#02050f,#08111f,#13294b);
+
+    z-index:9999;
+}
+
+#intro h1{
+    font-size:60px;
+    color:#ffd6e8;
+}
+
+#intro p{
+    font-size:22px;
+    width:70%;
+}
+
+/* Página */
+
+.container{
+    display:none;
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding-top:80px;
+    padding-bottom:100px;
+}
+
+h1{
+    font-size:55px;
+    color:#ffd6e8;
+}
+
+h2{
+    color:#ffb6d5;
+}
+
+h3{
+    letter-spacing:5px;
+    font-weight:300;
+}
+
+.frase{
+    font-size:24px;
+    font-style:italic;
+    width:80%;
+    margin:auto;
+    line-height:40px;
+}
+
+/* Botones */
+
+button{
+
+    padding:18px 40px;
+    font-size:20px;
+
+    background:#ff6b9c;
+
+    color:white;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* Carta */
+
+#carta{
+
+    display:none;
+
+    margin-top:70px;
+
+    padding:60px;
+
+    background:#fff8dc;
+
+    color:#3a2b18;
+
+    border-radius:20px;
+
+    box-shadow:0 0 40px rgba(0,0,0,.5);
+
+    line-height:38px;
+
+    font-size:20px;
+
+}
+
+/* Fondo */
+
+#stars{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-2;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:.35;
+
+}
+
+/* Estrellas */
+
+.star{
+
+    position:fixed;
+
+    width:2px;
+
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle 2s infinite alternate;
+
+    pointer-events:none;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+    }
+
+}
+
+/* Sakura */
+
+.petalo{
+
+    position:fixed;
+
+    top:-30px;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    animation:caer linear forwards;
+
+}
+
+@keyframes caer{
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+    }
+
+}
