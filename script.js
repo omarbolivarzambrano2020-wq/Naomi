@@ -227,30 +227,44 @@ const pantalla = document.getElementById("pantallaFinal");
 sorpresa.onclick = ()=>{
 
     pantalla.classList.add("pantallaVisible");
+    
+for(let i=0;i<250;i++){
 
-    for(let i=0;i<250;i++){
+    setTimeout(()=>{
+
+        const p=document.createElement("div");
+
+        p.className="petalo";
+
+        p.innerHTML="🌸";
+
+        p.style.left=Math.random()*100+"vw";
+
+        p.style.animationDuration=(3+Math.random()*3)+"s";
+
+        document.body.appendChild(p);
 
         setTimeout(()=>{
+            p.remove();
+        },7000);
 
-            estrellaFugaz();
+    },i*40);
 
-        },i*20);
+}
+     // Bajar volumen poco a poco
+    let volumen = musica.volume;
 
-    }
+    const bajar = setInterval(()=>{
+
+        volumen -= 0.05;
+
+        musica.volume = Math.max(volumen,0.3);
+
+        if(volumen <= 0.3){
+            clearInterval(bajar);
+        }
+
+    },100);
 
 };
-let volumen = 1;
 
-const bajar = setInterval(()=>{
-
-    volumen -= 0.05;
-
-    musica.volume = Math.max(volumen,0.3);
-
-    if(volumen <= 0.3){
-
-        clearInterval(bajar);
-
-    }
-
-},100);
