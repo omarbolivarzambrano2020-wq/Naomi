@@ -652,3 +652,10 @@ animation: latido 2s ease-in-out infinite;
     opacity:1;
 
 }
+.desvanecer{
+
+    opacity:0;
+
+    transition:3s;
+
+}
