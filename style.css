@@ -277,10 +277,10 @@ animation:lunaRespira 6s ease-in-out infinite;
     #f5f2d0 70%,
     #e5dfb0);
 
-    box-shadow:
-    0 0 40px #fff8c5,
-    0 0 90px rgba(255,255,200,.6),
-    0 0 140px rgba(255,255,255,.3);
+  box-shadow:
+0 0 60px #fff8c5,
+0 0 120px rgba(255,255,200,.8),
+0 0 220px rgba(255,255,255,.5);
 
     z-index:-1;
 }
@@ -592,7 +592,7 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
 }
 
 #teAmoFinal{
-
+animation: latido 2s ease-in-out infinite;
     opacity:0;
 
     transform:scale(.5);
@@ -606,6 +606,7 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
     text-shadow:
     0 0 20px #ff8abf,
     0 0 50px #ff8abf;
+    
 
 }
 
@@ -614,5 +615,39 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
     opacity:1;
 
     transform:scale(1);
+
+}
+@keyframes latido{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+#finalPequeno{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:#ffe4ef;
+
+    opacity:0;
+
+    transition:2s;
+
+}
+
+.mostrarTexto{
+
+    opacity:1;
 
 }
