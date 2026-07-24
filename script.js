@@ -202,3 +202,21 @@ function estrellaFugaz(){
 }
 
 setInterval(estrellaFugaz,7000);
+setInterval(()=>{
+
+    const luz=document.createElement("div");
+
+    luz.className="firefly";
+
+    luz.style.left=Math.random()*100+"vw";
+    luz.style.top=Math.random()*100+"vh";
+
+    document.body.appendChild(luz);
+
+    setTimeout(()=>{
+
+        luz.remove();
+
+    },5000);
+
+},700);
