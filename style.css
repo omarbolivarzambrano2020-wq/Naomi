@@ -578,3 +578,41 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
     visibility:visible;
 
 }
+#fraseFinal{
+
+    width:70%;
+    min-height:180px;
+
+    font-size:60px;
+
+    color:#ffd6e8;
+
+    text-align:center;
+
+}
+
+#teAmoFinal{
+
+    opacity:0;
+
+    transform:scale(.5);
+
+    transition:1.5s;
+
+    font-size:70px;
+
+    color:#ff8abf;
+
+    text-shadow:
+    0 0 20px #ff8abf,
+    0 0 50px #ff8abf;
+
+}
+
+.mostrarTeAmo{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
