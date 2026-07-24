@@ -259,7 +259,7 @@ transform:scale(1.05);
 
 transform:scale(1);
 
-} 
+} } x    
 #moon{
 animation:lunaRespira 6s ease-in-out infinite;
     
@@ -522,35 +522,8 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
 
 }
 
-#final{
 
-margin-top:80px;
 
-padding:70px;
-
-opacity:0;
-
-transform:translateY(80px);
-
-transition:2s;
-
-}
-/* Estado oculto */
-.finalOculto{
-
-opacity:0;
-
-transform:translateY(80px);
-
-}
-/* Estado visible */
-.finalVisible{
-
-opacity:1 !important;
-
-transform:translateY(0) !important;
-
-}
 #pantallaFinal{
 
     position:fixed;
