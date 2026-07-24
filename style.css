@@ -102,7 +102,7 @@ button:hover{
 
 #carta{
 
-display:none;
+display:block;
 
 margin-top:70px;
 
@@ -139,14 +139,6 @@ rgba(255,255,255,.15)
 
 }
 
-.oculta {
-    display: none;
-}
-
-.mostrar {
-    display: block;
-    animation: aparecer 1s ease;
-}
 
 @keyframes aparecer {
     from {
