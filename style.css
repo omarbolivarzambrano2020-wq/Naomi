@@ -532,7 +532,7 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
     width:100%;
     height:100vh;
 
-   background:black;
+   background:red !important;
 
     display:flex;
 
@@ -562,7 +562,7 @@ background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
 
 }
 
-#pantallaFinal {
+#pantallaFinal p{
 
     width:70%;
 
