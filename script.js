@@ -179,22 +179,41 @@ if (boton) {
 
     boton.onclick = () => {
 
-        carta.style.display = "block";
+      carta.classList.add("cartaVisible");
 
-        escribir();
+tituloCarta.innerHTML="";
 
-        carta.scrollIntoView({
+const texto="Para mi niña bonita... ❤️";
 
-            behavior: "smooth"
+let i=0;
 
-        });
+function escribir(){
 
-        boton.innerHTML = "❤️ Gracias por estos 14 meses ❤️";
+if(i<texto.length){
 
-    };
+tituloCarta.innerHTML+=texto.charAt(i);
+
+i++;
+
+setTimeout(escribir,70);
 
 }
 
+}
+
+escribir();
+
+carta.scrollIntoView({
+
+behavior:"smooth"
+
+ });
+
+        boton.innerHTML = "❤️ Gracias por estos 14 meses ❤️";
+
+  };
+
+}
 // =======================
 // MÚSICA
 // =======================
