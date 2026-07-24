@@ -220,28 +220,37 @@ setInterval(()=>{
     },5000);
 
 },700);
-const sorpresa=document.getElementById("ultimaSorpresa");
+const sorpresa = document.getElementById("ultimaSorpresa");
 
-const final=document.getElementById("final");
+const pantalla = document.getElementById("pantallaFinal");
 
-sorpresa.onclick=()=>{
+sorpresa.onclick = ()=>{
 
-    final.classList.add("finalVisible");
+    pantalla.classList.add("pantallaVisible");
 
-    for(let i=0;i<150;i++){
+    for(let i=0;i<250;i++){
 
         setTimeout(()=>{
 
             estrellaFugaz();
 
-        },i*30);
+        },i*20);
 
     }
 
-    final.scrollIntoView({
+};
+let volumen = 1;
 
-        behavior:"smooth"
+const bajar = setInterval(()=>{
 
-    });
+    volumen -= 0.05;
 
-}
+    musica.volume = Math.max(volumen,0.3);
+
+    if(volumen <= 0.3){
+
+        clearInterval(bajar);
+
+    }
+
+},100);
