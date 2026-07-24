@@ -220,51 +220,142 @@ setInterval(()=>{
     },5000);
 
 },700);
-const sorpresa = document.getElementById("ultimaSorpresa");
-
-const pantalla = document.getElementById("pantallaFinal");
+const fraseFinal = document.getElementById("fraseFinal");
+const teAmoFinal = document.getElementById("teAmoFinal");
 
 sorpresa.onclick = ()=>{
 
     pantalla.classList.add("pantallaVisible");
-    
-for(let i=0;i<250;i++){
 
-    setTimeout(()=>{
-
-        const p=document.createElement("div");
-
-        p.className="petalo";
-
-        p.innerHTML="🌸";
-
-        p.style.left=Math.random()*100+"vw";
-
-        p.style.animationDuration=(3+Math.random()*3)+"s";
-
-        document.body.appendChild(p);
-
-        setTimeout(()=>{
-            p.remove();
-        },7000);
-
-    },i*40);
-
-}
-     // Bajar volumen poco a poco
+    // Baja la música
     let volumen = musica.volume;
 
     const bajar = setInterval(()=>{
 
-        volumen -= 0.05;
+        volumen-=0.02;
 
-        musica.volume = Math.max(volumen,0.3);
+        musica.volume=Math.max(volumen,0.25);
 
-        if(volumen <= 0.3){
+        if(volumen<=0.25){
+
             clearInterval(bajar);
+
         }
 
     },100);
 
-};
+    // Lluvia de pétalos
+    for(let i=0;i<300;i++){
 
+        setTimeout(()=>{
+
+            const p=document.createElement("div");
+
+            p.className="petalo";
+
+            p.innerHTML="🌸";
+
+            p.style.left=Math.random()*100+"vw";
+
+            p.style.animationDuration=(3+Math.random()*4)+"s";
+
+            document.body.appendChild(p);
+
+            setTimeout(()=>{
+
+                p.remove();
+
+            },8000);
+
+        },i*30);
+
+    }
+
+    // Destellos
+    for(let i=0;i<150;i++){
+
+        setTimeout(()=>{
+
+            const f=document.createElement("div");
+
+            f.className="firefly";
+
+            f.style.left=Math.random()*100+"vw";
+
+            f.style.top=Math.random()*100+"vh";
+
+            document.body.appendChild(f);
+
+            setTimeout(()=>{
+
+                f.remove();
+
+            },5000);
+
+        },i*80);
+
+    }
+
+    // Máquina de escribir
+    const texto="Porque entre millones de personas... siempre volvería a elegirte.";
+
+    let i=0;
+
+    function escribir(){
+
+        if(i<texto.length){
+
+            fraseFinal.innerHTML+=texto.charAt(i);
+
+            i++;
+
+            setTimeout(escribir,55);
+
+        }
+
+    }
+
+    setTimeout(escribir,1800);
+
+    // Aparece TE AMO
+    setTimeout(()=>{
+
+        teAmoFinal.innerHTML="Te amo, Naomi. ❤️";
+
+        teAmoFinal.classList.add("mostrarTeAmo");
+
+    },6500);
+
+};
+setTimeout(()=>{
+
+    // Desaparece la carta
+    carta.classList.add("desvanecer");
+
+    // Desaparece el botón de música
+    play.classList.add("desvanecer");
+
+    // Desaparece el botón de sorpresa
+    sorpresa.classList.add("desvanecer");
+
+    // Desaparece el contador
+    document.getElementById("contador").classList.add("desvanecer");
+
+    // Desaparece la frase principal
+    document.querySelector(".frase").classList.add("desvanecer");
+
+    // Desaparecen los títulos
+    document.querySelector("h3").classList.add("desvanecer");
+    document.querySelector(".container h1").classList.add("desvanecer");
+
+},9000);
+const finalPequeno = document.getElementById("finalPequeno");
+
+setTimeout(()=>{
+
+    finalPequeno.innerHTML =
+    "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
+
+    finalPequeno.classList.add("mostrarTexto");
+
+},10000);
