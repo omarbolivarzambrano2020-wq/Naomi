@@ -220,3 +220,28 @@ setInterval(()=>{
     },5000);
 
 },700);
+const sorpresa=document.getElementById("ultimaSorpresa");
+
+const final=document.getElementById("final");
+
+sorpresa.onclick=()=>{
+
+    final.classList.add("finalVisible");
+
+    for(let i=0;i<150;i++){
+
+        setTimeout(()=>{
+
+            estrellaFugaz();
+
+        },i*30);
+
+    }
+
+    final.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+}
