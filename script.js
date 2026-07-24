@@ -247,20 +247,19 @@ sorpresa.onclick = ()=>{
 
     },100);
 
-    // Después de 2 segundos desaparece la página principal
-    setTimeout(()=>{
+  // Después de 2 segundos desaparece la página principal
+setTimeout(() => {
 
-     setTimeout(()=>{
+    pagina.style.opacity = "0";
 
-    pagina.style.opacity="0";
+}, 2000);
 
-},2000);
+setTimeout(() => {
 
-setTimeout(()=>{
+    pagina.style.display = "none";
 
-    pagina.style.display="none";
+}, 5000);
 
-},5000);
 
     // Lluvia de pétalos
     for(let i=0;i<300;i++){
