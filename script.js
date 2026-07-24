@@ -223,14 +223,14 @@ setInterval(()=>{
 const sorpresa = document.getElementById("ultimaSorpresa");
 const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
-document.body.innerHTML += "<h1 style='position:fixed;top:10px;left:10px;background:red;color:white;z-index:999999'>PRUEBA</h1>";
+console.log(fraseFinal);
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
-alert(fraseFinal);
+
 sorpresa.onclick = ()=>{
-alert("1");
+
     pantalla.classList.add("pantallaVisible");
-alert("2");
+
     // Baja la música
     let volumen = musica.volume;
 
@@ -316,7 +316,7 @@ setTimeout(() => {
 
     // Máquina de escribir
     const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
-alert("3");
+
     fraseFinal.innerHTML = "HOLA NAOMI";
 
     let i = 0;
