@@ -102,23 +102,40 @@ button:hover{
 
 #carta{
 
-    display:none;
+display:none;
 
-    margin-top:70px;
+margin-top:70px;
 
-    padding:60px;
+padding:60px;
 
-    background:#fff8dc;
+background:#fff8dc;
 
-    color:#3a2b18;
+color:#3a2b18;
 
-    border-radius:20px;
+border-radius:20px;
 
-    box-shadow:0 0 40px rgba(0,0,0,.5);
+box-shadow:
+0 0 30px rgba(0,0,0,.35),
+0 0 80px rgba(255,255,255,.1);
 
-    line-height:38px;
+line-height:40px;
 
-    font-size:20px;
+font-size:22px;
+
+transform:scale(.8);
+
+opacity:0;
+
+transition:
+opacity 1s,
+transform 1s;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.35),
+rgba(255,255,255,.15)
+);
 
 }
 
@@ -325,5 +342,14 @@ box-shadow:
         opacity:0;
 
     }
+
+}
+.cartaVisible{
+
+display:block !important;
+
+opacity:1 !important;
+
+transform:scale(1) !important;
 
 }
