@@ -2,49 +2,28 @@
 // ELEMENTOS
 // =======================
 
-const boton = document.getElementById("abrirCarta");
-const carta = document.getElementById("carta");
-
-boton.addEventListener("click", () => {
-    carta.classList.add("mostrar");
-});
-
 const intro = document.getElementById("intro");
 const pagina = document.querySelector(".container");
 
-const texto = "Para mi niña bonita...";
-let i = 0;
+const entrar = document.getElementById("entrar");
+
+const botonCarta = document.getElementById("btnCarta");
+const carta = document.getElementById("carta");
+const tituloCarta = document.getElementById("tituloCarta");
+
+const play = document.getElementById("playMusic");
+const musica = document.getElementById("musica");
 
 // =======================
-// TEXTO ESCRIBIÉNDOSE
+// BOTÓN ENTRAR
 // =======================
 
-function escribir() {
+entrar.addEventListener("click", () => {
 
-    const titulo = document.getElementById("tituloCarta");
+    intro.style.display = "none";
+    pagina.style.display = "block";
 
-    if (!titulo) return;
-
-    titulo.innerHTML = "";
-    i = 0;
-
-    function escribirLetra() {
-
-        if (i < texto.length) {
-
-            titulo.innerHTML += texto.charAt(i);
-
-            i++;
-
-            setTimeout(escribirLetra, 80);
-
-        }
-
-    }
-
-    escribirLetra();
-
-}
+});
 
 // =======================
 // CONTADOR
@@ -52,190 +31,155 @@ function escribir() {
 
 const inicio = new Date("2025-05-25");
 
-function actualizar() {
+function actualizar(){
 
-    const contador = document.getElementById("contador");
+    const contador=document.getElementById("contador");
 
-    if (!contador) return;
+    const hoy=new Date();
 
-    const hoy = new Date();
+    const dias=Math.floor((hoy-inicio)/(1000*60*60*24));
 
-    const diferencia = hoy - inicio;
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
-    contador.innerHTML = "❤️ Han pasado " + dias + " días juntos ❤️";
+    contador.innerHTML="❤️ Han pasado "+dias+" días juntos ❤️";
 
 }
 
 actualizar();
 
-setInterval(actualizar, 1000);
+setInterval(actualizar,1000);
+
+// =======================
+// CARTA
+// =======================
+
+botonCarta.addEventListener("click",()=>{
+
+    carta.classList.add("cartaVisible");
+
+    tituloCarta.innerHTML="";
+
+    const texto="Para mi niña bonita ❤️";
+
+    let i=0;
+
+    function escribir(){
+
+        if(i<texto.length){
+
+            tituloCarta.innerHTML+=texto.charAt(i);
+
+            i++;
+
+            setTimeout(escribir,70);
+
+        }
+
+    }
+
+    escribir();
+
+    carta.scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+// =======================
+// MÚSICA
+// =======================
+
+play.addEventListener("click",()=>{
+
+    musica.play();
+
+});
 
 // =======================
 // ESTRELLAS
 // =======================
 
-for (let s = 0; s < 200; s++) {
+for(let i=0;i<200;i++){
 
-    const star = document.createElement("div");
+    const star=document.createElement("div");
 
-    star.className = "star";
+    star.className="star";
 
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.top = Math.random() * 100 + "vh";
+    star.style.left=Math.random()*100+"vw";
 
-    star.style.animationDelay = Math.random() * 3 + "s";
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDelay=Math.random()*3+"s";
 
     document.body.appendChild(star);
 
 }
 
 // =======================
-// SAKURA
+// PÉTALOS
 // =======================
 
-setInterval(() => {
+setInterval(()=>{
 
-    const p = document.createElement("div");
+    const p=document.createElement("div");
 
-    p.className = "petalo";
+    p.className="petalo";
 
-    p.innerHTML = "🌸";
+    p.innerHTML="🌸";
 
-    p.style.left = Math.random() * 100 + "vw";
+    p.style.left=Math.random()*100+"vw";
 
-    p.style.animationDuration = (4 + Math.random() * 4) + "s";
+    p.style.animationDuration=(4+Math.random()*4)+"s";
 
     document.body.appendChild(p);
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         p.remove();
 
-    }, 8000);
+    },8000);
 
-}, 350);
+},350);
 
 // =======================
 // CORAZONES
 // =======================
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove",(e)=>{
 
-    const h = document.createElement("div");
+    const h=document.createElement("div");
 
-    h.innerHTML = "❤️";
+    h.innerHTML="❤️";
 
-    h.style.position = "fixed";
+    h.style.position="fixed";
 
-    h.style.left = e.clientX + "px";
+    h.style.left=e.clientX+"px";
 
-    h.style.top = e.clientY + "px";
+    h.style.top=e.clientY+"px";
 
-    h.style.pointerEvents = "none";
+    h.style.pointerEvents="none";
 
-    h.style.transition = "1s";
-
-    h.style.fontSize = "18px";
+    h.style.transition="1s";
 
     document.body.appendChild(h);
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        h.style.transform = "translateY(-60px)";
+        h.style.transform="translateY(-60px)";
 
-        h.style.opacity = "0";
+        h.style.opacity="0";
 
-    }, 20);
+    },20);
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         h.remove();
 
-    }, 1000);
+    },1000);
 
 });
 
 // =======================
-// BOTÓN ENTRAR
-// =======================
-
-const entrar = document.getElementById("entrar");
-
-if (entrar) {
-
-    entrar.onclick = () => {
-
-        intro.style.display = "none";
-
-        pagina.style.display = "block";
-
-    };
-
-}
-
-// =======================
-// BOTÓN CARTA
-// =======================
-
-if (boton) {
-
-    boton.onclick = () => {
-
-      carta.classList.add("cartaVisible");
-
-tituloCarta.innerHTML="";
-
-const texto="Para mi niña bonita... ❤️";
-
-let i=0;
-
-function escribir(){
-
-if(i<texto.length){
-
-tituloCarta.innerHTML+=texto.charAt(i);
-
-i++;
-
-setTimeout(escribir,70);
-
-}
-
-}
-
-escribir();
-
-carta.scrollIntoView({
-
-behavior:"smooth"
-
- });
-
-        boton.innerHTML = "❤️ Gracias por estos 14 meses ❤️";
-
-  };
-
-}
-// =======================
-// MÚSICA
-// =======================
-
-const play = document.getElementById("playMusic");
-
-if (play) {
-
-    play.onclick = () => {
-
-        document.getElementById("musica").play();
-
-    };
-
-}
-// ======================
 // ESTRELLAS FUGACES
-// ======================
+// =======================
 
 function estrellaFugaz(){
 
@@ -244,6 +188,7 @@ function estrellaFugaz(){
     s.className="shooting-star";
 
     s.style.top=Math.random()*40+"vh";
+
     s.style.left=(80+Math.random()*20)+"vw";
 
     document.body.appendChild(s);
