@@ -441,3 +441,49 @@ transform:translate(40px,-30px) scale(1.1);
 }
 
 }
+.firefly{
+
+position:fixed;
+
+width:5px;
+height:5px;
+
+background:#fff8a6;
+
+border-radius:50%;
+
+box-shadow:
+0 0 12px #fff8a6,
+0 0 25px #ffe97a;
+
+animation:volar 5s linear forwards;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+@keyframes volar{
+
+0%{
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(-120px) translateX(60px);
+
+}
+
+}
