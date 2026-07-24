@@ -509,3 +509,32 @@ transform:translateY(-120px) translateX(60px);
 }
 
 }
+#ultimaSorpresa{
+
+margin-top:40px;
+
+background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
+
+}
+
+#final{
+
+margin-top:80px;
+
+padding:70px;
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:2s;
+
+}
+
+.finalVisible{
+
+opacity:1 !important;
+
+transform:translateY(0) !important;
+
+}
