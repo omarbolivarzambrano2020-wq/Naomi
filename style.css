@@ -305,25 +305,14 @@ button:hover {
     visibility: visible;
 }
 
-#fraseFinal {
-    width: 65%;
-    max-width: 800px;
-    min-height: 180px;
-    font-size: 45px;
-    color: #ffd6e8;
-    background: rgba(20, 33, 61, 0.6); /* CORREGIDO: Fuera el fondo amarillo, ahora es un elegante vidrio cósmico */
-    backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+#fraseFinal{
+    color:white !important;
+    font-size:60px !important;
+    background:red !important;
+    width:100%;
+    min-height:100px;
+    display:block !important;
 }
-
 #teAmoFinal {
     font-size: 70px;
     color: #ff8abf;
