@@ -223,9 +223,13 @@ setInterval(()=>{
 const sorpresa = document.getElementById("ultimaSorpresa");
 const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
-console.log(fraseFinal);
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
+console.log(sorpresa);
+console.log(pantalla);
+console.log(fraseFinal);
+console.log(teAmoFinal);
+console.log(finalPequeno);
 
 sorpresa.onclick = ()=>{
 
