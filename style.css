@@ -272,28 +272,28 @@ button:hover {
 }
 
 #pantallaFinal{
-    position: fixed;
-    inset: 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position:fixed;
+    inset:0;
 
-    background: linear-gradient(#02050f,#08111f,#14213d);
+    display:none;
 
-    opacity: 0;
-    visibility: hidden;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    transition: 1.5s;
+    background:linear-gradient(#02050f,#08111f,#14213d);
 
-    z-index: 999999;
+    opacity:0;
+    transition:1.5s;
 
-    text-align: center;
+    z-index:999999;
 }
 .pantallaVisible{
+
+    display:flex;
     opacity:1;
-    visibility:visible;
+
 }
 
 #fraseFinal{
