@@ -75,7 +75,7 @@ botonCarta.addEventListener("click",()=>{
 
     }
 
-    escribir();
+    setTimeout(escribir,1500);
 
     carta.scrollIntoView({
         behavior:"smooth"
@@ -229,7 +229,15 @@ const finalPequeno = document.getElementById("finalPequeno");
 sorpresa.onclick = () => {
 
     // Mostrar pantalla final
+  pagina.style.opacity = "0";
+
+setTimeout(()=>{
+
+    pagina.style.display="none";
+
     pantalla.classList.add("pantallaVisible");
+
+},2000);
 
     // Bajar volumen de la música
     let volumen = musica.volume;
