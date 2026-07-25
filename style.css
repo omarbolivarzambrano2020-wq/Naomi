@@ -1,660 +1,363 @@
-body{
-    margin:0;
-    font-family:Georgia, serif;
-    background:linear-gradient(#02050f,#08111f,#14213d);
-    color:white;
-    overflow-x:hidden;
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y CUERPO
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(#02050f, #08111f, #14213d);
+    color: white;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Suaviza las fuentes en pantallas grandes */
 }
 
-/* Pantalla inicial */
-
-#intro{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background:linear-gradient(#02050f,#08111f,#13294b);
-
-    z-index:9999;
+/* Pantalla inicial de bienvenida */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(#02050f, #08111f, #13294b);
+    z-index: 9999;
 }
 
-#intro h1{
-    font-size:60px;
-    color:#ffd6e8;
+#intro h1 {
+    font-size: 60px;
+    color: #ffd6e8;
+    margin-bottom: 20px;
 }
 
-#intro p{
-    font-size:22px;
-    width:70%;
+#intro p {
+    font-size: 22px;
+    width: 60%;
+    max-width: 800px;
+    line-height: 1.6;
 }
 
-/* Página */
-
-.container{
-    display:none;
-    width:80%;
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    padding-top:80px;
-    padding-bottom:100px;
-      transition: opacity 3s;
+/* ==========================================================================
+   2. ESTRUCTURA DE LA PÁGINA PRINCIPAL
+   ========================================================================== */
+.container {
+    display: none;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    transition: opacity 3s;
 }
 
-h1{
-    font-size:55px;
-    color:#ffd6e8;
+h1 {
+    font-size: 55px;
+    color: #ffd6e8;
 }
 
-h2{
-    color:#ffb6d5;
+h2 {
+    color: #ffb6d5;
+    font-size: 32px;
 }
 
-h3{
-    letter-spacing:5px;
-    font-weight:300;
+h3 {
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 24px;
 }
 
-.frase{
-    font-size:24px;
-    font-style:italic;
-    width:80%;
-    margin:auto;
-    line-height:40px;
+.frase {
+    font-size: 24px;
+    font-style: italic;
+    width: 80%;
+    margin: 30px auto;
+    line-height: 40px;
 }
 
-/* Botones */
-
-button{
-
-    padding:18px 40px;
-    font-size:20px;
-
-    background:#ff6b9c;
-
-    color:white;
-
-    border:none;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+/* Botones con transiciones fluidas */
+button {
+    padding: 18px 40px;
+    font-size: 20px;
+    background: #ff6b9c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-button:hover{
-
-    transform:scale(1.08);
-
+button:hover {
+    transform: scale(1.08);
 }
 
-/* Carta */
-
-#carta{
-
-display:block;
-
-margin-top:70px;
-
-padding:60px;
-
-background:#fff8dc;
-
-color:#3a2b18;
-
-border-radius:20px;
-
-box-shadow:
-0 0 30px rgba(0,0,0,.35),
-0 0 80px rgba(255,255,255,.1);
-
-line-height:40px;
-
-font-size:22px;
-
-transform:scale(.8);
-
-opacity:0;
-
-transition:
-opacity 1s,
-transform 1s;
-
-background-image:
-
-linear-gradient(
-rgba(255,255,255,.35),
-rgba(255,255,255,.15)
-);
-
+/* ==========================================================================
+   3. ELEMENTO CARTA Y CONTENEDORES INTERACTIVOS
+   ========================================================================== */
+#carta {
+    display: block;
+    margin-top: 70px;
+    padding: 60px;
+    background: #fff8dc;
+    color: #3a2b18;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4), 0 0 100px rgba(255, 255, 255, 0.1);
+    line-height: 40px;
+    font-size: 22px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
 }
 
-
-@keyframes aparecer {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-/* Fondo */
-
-#stars{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    z-index:-2;
-
-    background-image:
-    radial-gradient(white 1px, transparent 1px);
-
-    background-size:40px 40px;
-
-    opacity:.35;
-
+.cartaVisible {
+    display: block !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
 }
 
-/* Estrellas */
+/* ==========================================================================
+   4. EFECTOS VISUALES Y ELEMENTOS DE FONDO (GPU OPTIMIZED)
+   ========================================================================== */
 
-.star{
-
-    position:fixed;
-
-    width:2px;
-
-    height:2px;
-
-    background:white;
-
-    border-radius:50%;
-
-    animation:twinkle 2s infinite alternate;
-
-    pointer-events:none;
-
+/* Capa fija de estrellas en miniatura */
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
 }
 
-@keyframes twinkle{
-
-    from{
-
-        opacity:.2;
-
-        transform:scale(1);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1.8);
-
-    }
-
+/* Estrellas parpadeantes individuales */
+.star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate ease-in-out;
+    pointer-events: none;
+    will-change: opacity, transform; /* Fuerza renderizado por tarjeta de video */
 }
 
-/* Sakura */
-
-.petalo{
-
-    position:fixed;
-
-    top:-30px;
-
-    font-size:24px;
-
-    pointer-events:none;
-
-    animation:caer linear forwards;
-
+@keyframes twinkle {
+    from { opacity: 0.2; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.8); }
 }
 
-@keyframes caer{
-
-    to{
-
-        transform:translateY(110vh) rotate(720deg);
-
-    }
-
-}
-/* ==========================
-   LUNA
-========================== */
-@keyframes lunaRespira{
-
-0%{
-
-transform:scale(1);
-
+/* Pétalos de Sakura cayendo */
+.petalo {
+    position: fixed;
+    top: -30px;
+    font-size: 24px;
+    pointer-events: none;
+    animation: caer linear forwards;
+    will-change: transform;
 }
 
-50%{
-
-transform:scale(1.05);
-
+@keyframes caer {
+    to { transform: translateY(105vh) rotate(720deg); }
 }
 
-100%{
-
-transform:scale(1);
-}     
-}     
-#moon{
-animation:lunaRespira 6s ease-in-out infinite;
-    position:fixed;
-    top:60px;
-    right:80px;
-
-    width:130px;
-    height:130px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(circle at 30% 30%,
-    #ffffff,
-    #f5f2d0 70%,
-    #e5dfb0);
-
-  box-shadow:
-0 0 60px #fff8c5,
-0 0 120px rgba(255,255,200,.8),
-0 0 220px rgba(255,255,255,.5);
-
-    z-index:-1;
+/* Diseño realista de la Luna */
+#moon {
+    position: fixed;
+    top: 60px;
+    right: 80px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #f5f2d0 70%, #e5dfb0);
+    box-shadow: 0 0 60px #fff8c5, 0 0 120px rgba(255, 255, 200, 0.8), 0 0 220px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    animation: lunaRespira 6s ease-in-out infinite;
+    will-change: transform;
 }
 
-#moon::after{
-
-content:"";
-
-position:absolute;
-
-left:20px;
-top:20px;
-
-width:18px;
-height:18px;
-
-border-radius:50%;
-
-background:rgba(180,180,180,.25);
-
-box-shadow:
-35px 20px rgba(180,180,180,.18),
-60px 45px rgba(180,180,180,.2),
-20px 65px rgba(180,180,180,.15);
-
-}
-/* ==========================
-   ESTRELLAS FUGACES
-========================== */
-
-.shooting-star{
-
-    position:fixed;
-
-    width:3px;
-    height:3px;
-
-    background:white;
-
-    border-radius:50%;
-
-    box-shadow:
-    0 0 10px white,
-    0 0 20px white,
-    0 0 40px white;
-
-    z-index:-1;
-
-    animation:shoot 2s linear forwards;
-
+#moon::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(180, 180, 180, 0.25);
+    box-shadow: 35px 20px rgba(180, 180, 180, 0.18), 60px 45px rgba(180, 180, 180, 0.2), 20px 65px rgba(180, 180, 180, 0.15);
 }
 
-.shooting-star::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:140px;
-    height:2px;
-
-    background:linear-gradient(
-        to right,
-        white,
-        transparent
-    );
-
-    transform:rotate(0deg);
-    transform-origin:left center;
-
+@keyframes lunaRespira {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
-@keyframes shoot{
-
-    from{
-
-        transform:
-        translate(0,0);
-
-        opacity:1;
-
-    }
-
-    to{
-
-        transform:
-        translate(-700px,350px);
-
-        opacity:0;
-
-    }
-
-}
-.cartaVisible{
-
-display:block !important;
-
-opacity:1 !important;
-
-transform:scale(1) !important;
-
-}
-/* ==========================
-   NEBULOSAS
-========================== */
-
-#nebula1,
-#nebula2,
-#nebula3{
-
-    position:fixed;
-
-    border-radius:50%;
-
-    filter:blur(60px);
-
-    opacity:.45;
-
-    z-index:-1;
-
-    animation:moverNebula 18s ease-in-out infinite alternate;
-
+/* Estrellas fugaces */
+.shooting-star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white;
+    z-index: -1;
+    animation: shoot 2s linear forwards;
+    will-change: transform, opacity;
 }
 
-#nebula1{
-
-width:700px;
-height:700px;
-
-background:#ff6bb5;
-
-opacity:.35;
-
-filter:blur(140px);
-
-top:-150px;
-left:-200px;
-
-}
-#nebula2{
-
-width:800px;
-height:800px;
-
-background:#7d5cff;
-
-opacity:.30;
-
-filter:blur(160px);
-
-right:-250px;
-bottom:-150px;
-
-}
-#nebula3{
-
-width:650px;
-height:650px;
-
-background:#3cc8ff;
-
-opacity:.22;
-
-filter:blur(150px);
-
-left:25%;
-top:45%;
-
-}
-@keyframes moverNebula{
-
-from{
-
-transform:translate(0,0) scale(1);
-
+.shooting-star::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 2px;
+    background: linear-gradient(to right, white, transparent);
+    transform-origin: left center;
 }
 
-to{
-
-transform:translate(40px,-30px) scale(1.1);
-
+@keyframes shoot {
+    from { transform: translate(0, 0); opacity: 1; }
+    to { transform: translate(-800px, 400px); opacity: 0; } /* Ampliado para cubrir monitores anchos */
 }
 
-}
-.firefly{
-
-position:fixed;
-
-width:5px;
-height:5px;
-
-background:#fff8a6;
-
-border-radius:50%;
-
-box-shadow:
-0 0 12px #fff8a6,
-0 0 25px #ffe97a;
-
-animation:volar 5s linear forwards;
-
-pointer-events:none;
-
-z-index:-1;
-
+/* Nebulosas del espacio */
+#nebula1, #nebula2, #nebula3 {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+    animation: moverNebula 22s ease-in-out infinite alternate;
+    will-change: transform;
 }
 
-@keyframes volar{
+#nebula1 { width: 700px; height: 700px; background: #ff6bb5; opacity: 0.35; filter: blur(140px); top: -150px; left: -200px; }
+#nebula2 { width: 800px; height: 800px; background: #7d5cff; opacity: 0.30; filter: blur(160px); right: -250px; bottom: -150px; }
+#nebula3 { width: 650px; height: 650px; background: #3cc8ff; opacity: 0.22; filter: blur(150px); left: 25%; top: 45%; }
 
-0%{
-
-opacity:0;
-transform:translateY(20px);
-
+@keyframes moverNebula {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(50px, -40px) scale(1.08); }
 }
 
-20%{
-
-opacity:1;
-
+/* Luciérnagas ambientales */
+.firefly {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: #fff8a6;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #fff8a6, 0 0 25px #ffe97a;
+    animation: volar 5s linear forwards;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform, opacity;
 }
 
-100%{
-
-opacity:0;
-transform:translateY(-120px) translateX(60px);
-
+@keyframes volar {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-160px) translateX(80px); }
 }
 
-}
-#ultimaSorpresa{
-
-margin-top:40px;
-
-background:linear-gradient(45deg,#ff6ba8,#ff9ed8);
-
-}
-
-
-
-#pantallaFinal{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100vh;
-
-   background:red !important;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:2s;
-
-    z-index:99999;
-
+/* ==========================================================================
+   5. ESCENA FINAL (CORREGIDA SIN COLORES DE PRUEBA)
+   ========================================================================== */
+#ultimaSorpresa {
+    margin-top: 40px;
+    background: linear-gradient(45deg, #ff6ba8, #ff9ed8);
 }
 
-#pantallaFinal h1{
-
-    color:#ffd6e8;
-
-    font-size:70px;
-
+#pantallaFinal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#02050f, #08111f, #14213d); /* CORREGIDO: Fuera el fondo rojo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s, visibility 2s;
+    z-index: 99999;
 }
 
-#pantallaFinal p{
-
-    width:70%;
-
-    font-size:28px;
-
-    line-height:45px;
-
+#pantallaFinal h1 {
+    color: #ffd6e8;
+    font-size: 70px;
 }
 
-.pantallaVisible{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-#fraseFinal{
-
-    width:70%;
-    min-height:180px;
-    font-size:60px;
-    color:red;
-    background:yellow;
-    text-align:center;
-    border:3px solid white;
-
+#pantallaFinal p {
+    width: 60%;
+    font-size: 28px;
+    line-height: 45px;
 }
 
-#teAmoFinal{
-animation: latido 2s ease-in-out infinite;
-    opacity:0;
-
-    transform:scale(.5);
-
-    transition:1.5s;
-
-    font-size:70px;
-
-    color:#ff8abf;
-
-    text-shadow:
-    0 0 20px #ff8abf,
-    0 0 50px #ff8abf;
-    
-
+.pantallaVisible {
+    opacity: 1;
+    visibility: visible;
 }
 
-.mostrarTeAmo{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-@keyframes latido{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.06);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
-}
-#finalPequeno{
-
-    margin-top:25px;
-
-    font-size:22px;
-
-    color:#ffe4ef;
-
-    opacity:0;
-
-    transition:2s;
-
+#fraseFinal {
+    width: 65%;
+    max-width: 800px;
+    min-height: 180px;
+    font-size: 45px;
+    color: #ffd6e8;
+    background: rgba(20, 33, 61, 0.6); /* CORREGIDO: Fuera el fondo amarillo, ahora es un elegante vidrio cósmico */
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
-.mostrarTexto{
-
-    opacity:1;
-
+#teAmoFinal {
+    font-size: 70px;
+    color: #ff8abf;
+    text-shadow: 0 0 20px #ff8abf, 0 0 50px #ff8abf;
+    animation: latido 2s ease-in-out infinite;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity;
 }
-.desvanecer{
 
-    opacity:0;
+.mostrarTeAmo {
+    opacity: 1;
+    transform: scale(1);
+}
 
-    transition:3s;
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
 
+#finalPequeno {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #ffe4ef;
+    opacity: 0;
+    transition: 2s;
+}
+
+.mostrarTexto {
+    opacity: 1;
+}
+
+.desvanecer {
+    opacity: 0;
+    transition: 3s;
 }
