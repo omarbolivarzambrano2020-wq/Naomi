@@ -328,7 +328,7 @@ escribir();
     setTimeout(() => {
 
         teAmoFinal.innerHTML = "Te amo, Naomi ❤️";
-        teAmoFinal.classList.add("mostrarTeamo");
+        teAmoFinal.classList.add("mostrarTeAmo");
 
     }, 6500);
 
