@@ -272,27 +272,25 @@ button:hover {
 }
 
 #pantallaFinal{
+    position: fixed;
+    inset: 0;
 
-    position:fixed;
-    inset:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    background: linear-gradient(#02050f,#08111f,#14213d);
 
-    background:linear-gradient(#02050f,#08111f,#14213d);
+    opacity: 0;
+    visibility: hidden;
 
-    opacity:0;
-    visibility:hidden;
+    transition: 1.5s;
 
-    transition:1.5s;
+    z-index: 999999;
 
-    z-index:999999;
-
-    text-align:center;
+    text-align: center;
 }
-
 .pantallaVisible{
     opacity:1;
     visibility:visible;
