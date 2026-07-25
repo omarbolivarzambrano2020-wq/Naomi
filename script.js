@@ -254,7 +254,6 @@ setTimeout(() => {
 setTimeout(() => {
     pagina.style.display = "none";
 }, 5000);
-
     // Lluvia de pétalos
     for (let i = 0; i < 300; i++) {
 
@@ -329,7 +328,7 @@ escribir();
     setTimeout(() => {
 
         teAmoFinal.innerHTML = "Te amo, Naomi ❤️";
-        teAmoFinal.classList.add("mostrar");
+        teAmoFinal.classList.add("mostrarTeamo");
 
     }, 6500);
 
@@ -339,7 +338,7 @@ escribir();
         finalPequeno.innerHTML =
             "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
 
-        finalPequeno.classList.add("mostrar");
+        finalPequeno.classList.add("mostrarTexto");
 
     }, 10000);
 
