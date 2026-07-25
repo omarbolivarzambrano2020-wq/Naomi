@@ -271,82 +271,82 @@ button:hover {
     background: linear-gradient(45deg, #ff6ba8, #ff9ed8);
 }
 
-#pantallaFinal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(#02050f, #08111f, #14213d); /* CORREGIDO: Fuera el fondo rojo */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 2s, visibility 2s;
-    z-index: 99999;
+#pantallaFinal{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(#02050f,#08111f,#14213d);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:1.5s;
+
+    z-index:9999;
+
+    text-align:center;
 }
 
-#pantallaFinal h1 {
-    color: #ffd6e8;
-    font-size: 70px;
-}
-
-#pantallaFinal p {
-    width: 60%;
-    font-size: 28px;
-    line-height: 45px;
-}
-
-.pantallaVisible {
-    opacity: 1;
-    visibility: visible;
+.pantallaVisible{
+    opacity:1;
+    visibility:visible;
 }
 
 #fraseFinal{
-    color:white !important;
-    font-size:60px !important;
-    background:red !important;
-    width:100%;
-    min-height:100px;
-    display:block !important;
-}
-#teAmoFinal {
-    font-size: 70px;
-    color: #ff8abf;
-    text-shadow: 0 0 20px #ff8abf, 0 0 50px #ff8abf;
-    animation: latido 2s ease-in-out infinite;
-    opacity: 0;
-    transform: scale(0.5);
-    transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    will-change: transform, opacity;
+
+    width:80%;
+
+    color:white;
+
+    font-size:55px;
+
+    min-height:120px;
+
+    text-align:center;
+
 }
 
-.mostrarTeAmo {
-    opacity: 1;
-    transform: scale(1);
+#teAmoFinal{
+
+    margin-top:35px;
+
+    color:#ff8abf;
+
+    font-size:65px;
+
+    opacity:0;
+
+    transition:1.5s;
+
 }
 
-@keyframes latido {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
+#teAmoFinal.mostrar{
+
+    opacity:1;
+
 }
 
-#finalPequeno {
-    margin-top: 25px;
-    font-size: 22px;
-    color: #ffe4ef;
-    opacity: 0;
-    transition: 2s;
+#finalPequeno{
+
+    margin-top:25px;
+
+    color:#ffe7f3;
+
+    font-size:22px;
+
+    opacity:0;
+
+    transition:2s;
+
 }
 
-.mostrarTexto {
-    opacity: 1;
-}
+#finalPequeno.mostrar{
 
-.desvanecer {
-    opacity: 0;
-    transition: 3s;
+    opacity:1;
+
 }
