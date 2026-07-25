@@ -233,6 +233,14 @@ console.log(finalPequeno);
 
 sorpresa.onclick = ()=>{
 
+    alert("Entré al botón");
+
+    pantalla.classList.add("pantallaVisible");
+
+    fraseFinal.innerHTML = "HOLA NAOMI";
+
+    alert("Ya escribí");
+
     pantalla.classList.add("pantallaVisible");
 
     // Baja la música
