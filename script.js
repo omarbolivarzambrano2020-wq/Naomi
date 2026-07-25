@@ -246,17 +246,14 @@ sorpresa.onclick = () => {
 
     }, 100);
 
-    // Ocultar página principal
-    setTimeout(() => {
-     pagina.style.opacity = "0";
+  // Ocultar página principal
+setTimeout(() => {
+    pagina.style.opacity = "0";
+}, 2000);
 
 setTimeout(() => {
-
     pagina.style.display = "none";
-
-    pantalla.classList.add("pantallaVisible");
-
-}, 2000);
+}, 5000);
 
     // Lluvia de pétalos
     for (let i = 0; i < 300; i++) {
@@ -303,30 +300,30 @@ setTimeout(() => {
 
     }
 
-    // Reiniciar textos
-    fraseFinal.innerHTML = "";
-    teAmoFinal.innerHTML = "";
-    finalPequeno.innerHTML = "";
-fraseFinal.innerHTML = "SI VES ESTE TEXTO, FUNCIONA";
-    const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
+  // Reiniciar textos
+fraseFinal.innerHTML = "";
+teAmoFinal.innerHTML = "";
+finalPequeno.innerHTML = "";
 
-    let i = 0;
+const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
 
-    function escribir() {
+let i = 0;
 
-        if (i < texto.length) {
+function escribir() {
 
-            fraseFinal.innerHTML += texto.charAt(i);
+    if (i < texto.length) {
 
-            i++;
+        fraseFinal.innerHTML += texto.charAt(i);
 
-            setTimeout(escribir, 55);
+        i++;
 
-        }
+        setTimeout(escribir, 55);
 
     }
 
-    escribir();
+}
+
+escribir();
 
     // Te amo
     setTimeout(() => {
