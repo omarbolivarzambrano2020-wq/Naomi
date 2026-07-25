@@ -280,14 +280,14 @@ button:hover {
     justify-content:center;
     align-items:center;
 
-    background:linear-gradient(#02050f,#08111f,#14213d);
+    background:#000;
 
-    opacity:0;
-    visibility:hidden;
+    opacity:1;
+    visibility:visible;
 
     transition:1.5s;
 
-    z-index:9999;
+    z-index:999999;
 
     text-align:center;
 }
