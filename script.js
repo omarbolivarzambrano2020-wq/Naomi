@@ -329,7 +329,7 @@ sorpresa.onclick = () => {
     setTimeout(() => {
 
         teAmoFinal.innerHTML = "Te amo, Naomi ❤️";
-        teAmoFinal.classList.add("mostrarTeAmo");
+        teAmoFinal.classList.add("mostrar");
 
     }, 6500);
 
@@ -339,7 +339,7 @@ sorpresa.onclick = () => {
         finalPequeno.innerHTML =
             "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
 
-        finalPequeno.classList.add("mostrarTexto");
+        finalPequeno.classList.add("mostrar");
 
     }, 10000);
 
