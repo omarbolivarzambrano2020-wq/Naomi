@@ -225,148 +225,122 @@ const pantalla = document.getElementById("pantallaFinal");
 const fraseFinal = document.getElementById("fraseFinal");
 const teAmoFinal = document.getElementById("teAmoFinal");
 const finalPequeno = document.getElementById("finalPequeno");
-console.log(sorpresa);
-console.log(pantalla);
-console.log(fraseFinal);
-console.log(teAmoFinal);
-console.log(finalPequeno);
 
-sorpresa.onclick = ()=>{
+sorpresa.onclick = () => {
 
-   sorpresa.onclick = ()=>{
-
+    // Mostrar pantalla final
     pantalla.classList.add("pantallaVisible");
 
-    pantalla.innerHTML = `
-        <h1 style="color:white;font-size:80px;">
-            FUNCIONA
-        </h1>
-    `;
-
-}
-    // Baja la música
+    // Bajar volumen de la música
     let volumen = musica.volume;
 
-    const bajar = setInterval(()=>{
+    const bajar = setInterval(() => {
 
         volumen -= 0.02;
 
-        musica.volume = Math.max(volumen,0.25);
+        musica.volume = Math.max(volumen, 0.25);
 
-        if(volumen <= 0.25){
-
+        if (volumen <= 0.25) {
             clearInterval(bajar);
-
         }
 
-    },100);
+    }, 100);
 
-  // Después de 2 segundos desaparece la página principal
-setTimeout(() => {
+    // Ocultar página principal
+    setTimeout(() => {
+        pagina.style.opacity = "0";
+    }, 2000);
 
-    pagina.style.opacity = "0";
-
-}, 2000);
-
-setTimeout(() => {
-
-    pagina.style.display = "none";
-
-}, 5000);
-
+    setTimeout(() => {
+        pagina.style.display = "none";
+    }, 5000);
 
     // Lluvia de pétalos
-    for(let i=0;i<300;i++){
+    for (let i = 0; i < 300; i++) {
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            const p=document.createElement("div");
+            const p = document.createElement("div");
 
-            p.className="petalo";
+            p.className = "petalo";
+            p.innerHTML = "🌸";
 
-            p.innerHTML="🌸";
-
-            p.style.left=Math.random()*100+"vw";
-
-            p.style.animationDuration=(3+Math.random()*4)+"s";
+            p.style.left = Math.random() * 100 + "vw";
+            p.style.animationDuration = (3 + Math.random() * 4) + "s";
 
             document.body.appendChild(p);
 
-            setTimeout(()=>{
-
+            setTimeout(() => {
                 p.remove();
+            }, 8000);
 
-            },8000);
-
-        },i*30);
+        }, i * 30);
 
     }
 
     // Destellos
-    for(let i=0;i<150;i++){
+    for (let i = 0; i < 150; i++) {
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            const f=document.createElement("div");
+            const f = document.createElement("div");
 
-            f.className="firefly";
+            f.className = "firefly";
 
-            f.style.left=Math.random()*100+"vw";
-
-            f.style.top=Math.random()*100+"vh";
+            f.style.left = Math.random() * 100 + "vw";
+            f.style.top = Math.random() * 100 + "vh";
 
             document.body.appendChild(f);
 
-            setTimeout(()=>{
-
+            setTimeout(() => {
                 f.remove();
+            }, 5000);
 
-            },5000);
-
-        },i*80);
+        }, i * 80);
 
     }
 
-    // Máquina de escribir
-    const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
+    // Reiniciar textos
+    fraseFinal.innerHTML = "";
+    teAmoFinal.innerHTML = "";
+    finalPequeno.innerHTML = "";
 
-    fraseFinal.innerHTML = "HOLA NAOMI";
+    const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
 
     let i = 0;
 
-    function escribir(){
+    function escribir() {
 
-        if(i < texto.length){
+        if (i < texto.length) {
 
             fraseFinal.innerHTML += texto.charAt(i);
 
             i++;
 
-            setTimeout(escribir,55);
+            setTimeout(escribir, 55);
 
         }
 
     }
 
-    setTimeout(escribir,1800);
+    escribir();
 
-    // Aparece "Te amo"
-    setTimeout(()=>{
+    // Te amo
+    setTimeout(() => {
 
-        teAmoFinal.innerHTML = "Te amo, Naomi. ❤️";
-
+        teAmoFinal.innerHTML = "Te amo, Naomi ❤️";
         teAmoFinal.classList.add("mostrarTeAmo");
 
-    },6500);
+    }, 6500);
 
-    // Texto final
-    setTimeout(()=>{
+    // Mensaje final
+    setTimeout(() => {
 
         finalPequeno.innerHTML =
-        "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
+            "Gracias por hacer de estos 14 meses los más bonitos de mi vida.";
 
         finalPequeno.classList.add("mostrarTexto");
 
-    },10000);
+    }, 10000);
 
 };
