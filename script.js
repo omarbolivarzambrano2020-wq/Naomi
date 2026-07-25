@@ -228,16 +228,19 @@ const finalPequeno = document.getElementById("finalPequeno");
 
 sorpresa.onclick = () => {
 
-    // Mostrar pantalla final
-  pagina.style.opacity = "0";
+    setTimeout(() => {
 
-setTimeout(()=>{
+    pagina.style.opacity = "0";
+
+},2000);
+
+setTimeout(() => {
 
     pagina.style.display="none";
 
     pantalla.classList.add("pantallaVisible");
 
-},2000);
+},5000);
 
     // Bajar volumen de la música
     let volumen = musica.volume;
