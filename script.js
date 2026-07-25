@@ -248,12 +248,15 @@ sorpresa.onclick = () => {
 
     // Ocultar página principal
     setTimeout(() => {
-        pagina.style.opacity = "0";
-    }, 2000);
+     pagina.style.opacity = "0";
 
-    setTimeout(() => {
-        pagina.style.display = "none";
-    }, 5000);
+setTimeout(() => {
+
+    pagina.style.display = "none";
+
+    pantalla.classList.add("pantallaVisible");
+
+}, 2000);
 
     // Lluvia de pétalos
     for (let i = 0; i < 300; i++) {
@@ -304,7 +307,7 @@ sorpresa.onclick = () => {
     fraseFinal.innerHTML = "";
     teAmoFinal.innerHTML = "";
     finalPequeno.innerHTML = "";
-
+fraseFinal.innerHTML = "SI VES ESTE TEXTO, FUNCIONA";
     const texto = "Porque entre millones de personas... siempre volvería a elegirte.";
 
     let i = 0;
