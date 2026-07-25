@@ -272,6 +272,7 @@ button:hover {
 }
 
 #pantallaFinal{
+
     position:fixed;
     inset:0;
 
@@ -280,10 +281,10 @@ button:hover {
     justify-content:center;
     align-items:center;
 
-    background:#000;
+    background:linear-gradient(#02050f,#08111f,#14213d);
 
-    opacity:1;
-    visibility:visible;
+    opacity:0;
+    visibility:hidden;
 
     transition:1.5s;
 
@@ -325,7 +326,7 @@ button:hover {
 
 }
 
-#teAmoFinal.mostrar{
+#teAmoFinal.mostrarTeAmo{
 
     opacity:1;
 
@@ -345,7 +346,7 @@ button:hover {
 
 }
 
-#finalPequeno.mostrar{
+#finalPequeno.mostrarTexto{
 
     opacity:1;
 
